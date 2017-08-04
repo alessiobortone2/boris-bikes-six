@@ -38,6 +38,7 @@ private
 
   def empty?
     @bikes.empty?
+    
   end
 
 end
