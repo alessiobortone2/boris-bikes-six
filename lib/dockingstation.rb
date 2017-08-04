@@ -2,6 +2,8 @@ class DockingStation
 
 DEFAULT_CAPACITY = 20
 
+attr_reader :bike, :capacity, :broken
+
   def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
     @capacity = capacity
@@ -12,8 +14,6 @@ DEFAULT_CAPACITY = 20
     raise "no bikes available" if empty?
     @bikes
   end
-
-attr_reader :bike, :capacity, :broken
 
   def dock(bike, broken = false)
     raise "the dock is full" if full?
