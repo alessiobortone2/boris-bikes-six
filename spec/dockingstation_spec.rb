@@ -28,7 +28,7 @@ end
 describe Bike do
 
   it 'can be reported broken' do
-    expect(Bike.new).not_to be(:working?)
+    expect(Bike.new).to respond_to(:broken?)
   end
 end
 =begin
