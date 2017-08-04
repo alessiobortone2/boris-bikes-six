@@ -21,6 +21,12 @@ end
 
 end
 
+describe Bike do
+
+  it 'can be reported broken' do
+    expect(Bike.new).not_to be(:working?)
+  end
+end
 =begin
     it 'releases a bike' do
     expect(DockingStation.new).to respond_to(:release_bike)

@@ -5,6 +5,7 @@ DEFAULT_CAPACITY = 20
   def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
     @capacity = capacity
+    @broken = []
   end
 
   def release_bike
@@ -12,15 +13,18 @@ DEFAULT_CAPACITY = 20
     @bikes
   end
 
-attr_reader :bike, :capacity
+attr_reader :bike, :capacity, :broken
 
-
-  def dock(bike)
+  def dock(bike, broken = false)
     raise "the dock is full" if full?
-    @bikes << bike
+    broken ? @broken << bike : @bikes << bike
   end
 
+
 private
+  def broken?
+
+  end
 
   def full?
     @bikes.count >= @capacity
@@ -33,9 +37,19 @@ private
 end
 
 class Bike
+
   def working?
     true
   end
+
+  def report_broken
+    @broken = true
+  end
+
+  def broken?
+    @broken
+  end
+
 end
 
 
