@@ -12,6 +12,8 @@ p docking1.dock(bike1)
 
 p docking1.release_bike
 
+p docking1.report_broken
+
 =begin
 docking_station = DockingStation.new
 docking_station1 = DockingStation.new(10)

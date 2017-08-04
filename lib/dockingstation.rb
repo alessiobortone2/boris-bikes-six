@@ -8,6 +8,8 @@ attr_accessor :bike, :capacity, :broken
     @bikes = []
     @capacity = capacity
     @broken = []
+    @bike = Bike.new
+
   end
 
   def release_bike
@@ -19,12 +21,14 @@ attr_accessor :bike, :capacity, :broken
     raise "the dock is full" if full?
     if broken
        @broken << bike
-       p @broken
      else
        @bikes << bike
      end
-  end
+   end
 
+   def report_broken
+     @bike.broken?
+   end
 
 private
 
@@ -47,8 +51,6 @@ class Bike
   def broken?
     true
   end
-
-
 
 end
 
